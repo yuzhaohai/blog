@@ -1,0 +1,30 @@
+# Bundler cache
+.bundle
+vendor
+
+# Jekyll cache
+.jekyll-cache
+.jekyll-metadata
+_site
+
+# RubyGems
+*.gem
+
+# NPM dependencies
+node_modules
+
+# IDE configurations
+.idea
+.vscode/*
+!.vscode/settings.json
+!.vscode/extensions.json
+!.vscode/tasks.json
+
+# Misc
+# _sass/vendors 与 assets/js/dist 由 npm run build 生成，按官方 init 流程纳入版本控制
+# (purgecss.js / rollup 在 CI 中会重新生成，保持一致)
+
+# Hidden system files
+*~
+.DS_Store
+Thumbs.db
