@@ -88,7 +88,7 @@ math: true
 
 [link text](https://example.com)
 
-[yangh9.github.io](/)
+[yangh9.github.io](/blog/)
 
 ---
 
