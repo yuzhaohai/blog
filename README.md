@@ -1,77 +1,43 @@
-<!-- markdownlint-disable-next-line -->
-<div align="center">
+# 于兆海的个人博客
 
-  <!-- markdownlint-disable-next-line -->
-  # Chirpy Jekyll Theme
+> 命运长河里挣扎的一条小鱼
 
-  A minimal, responsive, and feature-rich Jekyll theme for technical writing.
+个人博客，记录技术学习笔记与生活随想。
 
-  [![CI][badge-ci]][ci]&nbsp;
-  [![Codacy Badge][badge-codacy]][codacy]&nbsp;
-  [![GitHub license][badge-license]][license]&nbsp;
-  [![Gem Version][badge-gem]][gem]&nbsp;
-  [![Open in Dev Containers][badge-open-container]][open-container]
+在线地址：<https://yuzhaohai.github.io/blog/>
 
-  [**Live Demo** →][demo]
+## 技术栈
 
-  [![Devices Mockup](https://chirpy-img.netlify.app/commons/devices-mockup.png)][demo]
+- **框架**：[Jekyll](https://jekyllrb.com/) + [Chirpy](https://github.com/cotes2020/jekyll-theme-chirpy) 主题
+- **部署**：GitHub Pages + GitHub Actions（推送到 `main` 自动构建发布，站点挂载在 `/blog/` 子路径）
 
-</div>
+## 本地开发
 
-## Features
+```bash
+bundle install          # 首次安装依赖
+bundle exec jekyll s    # 启动本地服务 http://localhost:4000/blog/
+```
 
-- **Design & UX** - Responsive layout, Dark/Light modes, Localized UI language,
-  and Dark mode images.
-- **Content Management** - Pinned posts, Hierarchical categories, Trending tags,
-  Auto-generated Table of Contents, and Last modified dates.
-- **Rich Text Support** - Syntax highlighting, Mathematical expressions, Mermaid
-  diagrams & flowcharts, and Embedded media.
-- **Interactivity & Outreach** - Built-in search, Multiple comment systems, and
-  Atom feeds.
-- **System & Optimization** - PWA support, integrated Web analytics, and
-  advanced SEO performance.
+## 目录说明
 
-## Documentation
+| 路径 | 说明 |
+| --- | --- |
+| `_posts/` | 博客文章（文件名格式 `YYYY-MM-DD-标题.md`） |
+| `_tabs/` | 侧边栏页面（关于、归档、分类、标签等） |
+| `_config.yml` | 站点配置（标题、头像、部署地址等） |
+| `assets/img/` | 少量站内资源（头像、favicon） |
 
-To learn how to use, develop, and upgrade the project, please refer to the
-[Wiki][wiki].
+## 资源引用
 
-## Contributing
+- **图片图床**：文章图片存放在独立仓库 [resources](https://github.com/yuzhaohai/resources)，通过 jsDelivr CDN 引用：
+  ```markdown
+  ![图片](https://cdn.jsdelivr.net/gh/yuzhaohai/resources@main/poem/xxx.jpg)
+  ```
+  文章内通过 front matter 的 `media_subpath` 统一指定目录，正文直接写文件名即可。
+- **静态工具页**：交互页面存放在独立仓库 [html](https://github.com/yuzhaohai/html)，通过 GitHub Pages 引用，例如 [JSON 树视图](https://yuzhaohai.github.io/html/awsome/json-tree.html)。
 
-Contributions (_pull requests_, _issues_, and _discussions_) are what make the
-open-source community such an amazing place to learn, inspire, and create. Any
-contributions you make are greatly appreciated.
-For details, please refer to our [Contributing Guidelines][contribute-guide].
+## 部署流程
 
-## Credits
-
-This project is built on the [Jekyll][jekyllrb] ecosystem and integrates a
-collection of [excellent libraries][lib]. Its avatar and favicon are sourced
-from [ClipartMAX][clipartmax].
-
-Furthermore, thanks to everyone who contributed to the development of this project!
-
-[![all-contributors][contributors-avatar]][contributors]
-
-## License
-
-This project is licensed under the [MIT License][license].
-
-[badge-ci]: https://img.shields.io/github/actions/workflow/status/cotes2020/jekyll-theme-chirpy/ci.yml?logo=github
-[badge-codacy]: https://img.shields.io/codacy/grade/4e556876a3c54d5e8f2d2857c4f43894?logo=codacy
-[badge-license]: https://img.shields.io/github/license/cotes2020/jekyll-theme-chirpy?color=goldenrod
-[badge-gem]: https://img.shields.io/gem/v/jekyll-theme-chirpy?&logo=RubyGems&logoColor=ghostwhite&label=gem&color=orange
-[badge-open-container]: https://img.shields.io/badge/Dev_Containers-Open-deepskyblue?logo=linuxcontainers
-[gem]: https://rubygems.org/gems/jekyll-theme-chirpy
-[ci]: https://github.com/cotes2020/jekyll-theme-chirpy/actions/workflows/ci.yml?query=event%3Apush+branch%3Amaster
-[codacy]: https://app.codacy.com/gh/cotes2020/jekyll-theme-chirpy/dashboard?utm_source=gh&utm_medium=referral&utm_content=&utm_campaign=Badge_grade
-[license]: https://github.com/cotes2020/jekyll-theme-chirpy/blob/master/LICENSE
-[open-container]: https://vscode.dev/redirect?url=vscode://ms-vscode-remote.remote-containers/cloneInVolume?url=https://github.com/cotes2020/jekyll-theme-chirpy
-[jekyllrb]: https://jekyllrb.com/
-[clipartmax]: https://www.clipartmax.com/middle/m2i8b1m2K9Z5m2K9_ant-clipart-childrens-ant-cute/
-[demo]: https://cotes2020.github.io/chirpy-demo/
-[wiki]: https://github.com/cotes2020/jekyll-theme-chirpy/wiki
-[contribute-guide]: https://github.com/cotes2020/jekyll-theme-chirpy/blob/master/docs/CONTRIBUTING.md
-[contributors]: https://github.com/cotes2020/jekyll-theme-chirpy/graphs/contributors
-[contributors-avatar]: https://contrib.rocks/image?repo=cotes2020/jekyll-theme-chirpy&columns=16&max=112
-[lib]: https://github.com/cotes2020/chirpy-static-assets
+1. 在 `_posts/` 下新增 Markdown 文章
+2. `git add -A && git commit -m "..." && git push origin main`
+3. GitHub Actions 自动构建并部署到 <https://yuzhaohai.github.io/blog/>
